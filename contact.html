@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<script src="js/jquery-2.2.0.min.js" type="text/javascript"></script>
+		<script src="js/jquery.validate.min.js" type="text/javascript"></script>
+		<script src="js/script.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="style.css">
+		<title>
+			Contact Us
+		</title>
+	</head>
+	<body>
+		<div class="main">
+			<h1 id="title">Tic Tac Toe</h1>
+			<ul class="title-bar">
+				<li><a href="index.html">Tic Tac Toe</a></li>
+				<li><a href="faq.html">FAQ</a></li>
+				<li><a href="registration.html">Registration</a></li>
+				<li><a href="contact.html">Contact Us</a></li>
+			</ul>
+			
+			<h3>Contact Us</h3>
+			
+			<form class="contact" id="contact-form" method="get">
+				<p>
+					<label for="contact-name">Name <span>(required)</span>:</label><br>
+					<input id="contact-name" name="name" minlength="5" type="text" required />
+				</p>
+				<p>
+					<label for="contact-email">Email <span>(required)</span>:</label><br>
+					<input id="contact-email" name="email" type="email" required/>
+				</p>
+				<p>
+					<label for="comments">Comments: <label><br>
+					<textarea id="contact-address" name="address" type="textarea"></textarea>
+				</p>
+				<p>
+					<input class="submit" type="submit" value="Submit">
+				</p>
+			</form>
+		</div>
+	</body>
+</html>

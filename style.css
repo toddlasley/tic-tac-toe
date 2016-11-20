@@ -1,0 +1,118 @@
+.main {
+	font-family: "Helvetica";
+	position: float;
+	width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.board {
+	width: 310px;
+	height: 310px;
+	margin: 0 auto;
+}
+
+#title {
+	text-align: center;
+	margin: 21px auto 0;
+	width: 500px;
+	background-color: #4d5886;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	color: white;
+}
+
+.title-bar{
+	width: 500px;
+	margin: 0 auto;
+	padding: 0;
+	background-color: #747ba1;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	text-align: center;
+	
+}
+
+.title-bar a {
+	color: #ffba77;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.title-bar > li {
+	display: inline-block;
+	margin: 0 10px;
+	padding: 5px 0 5px;
+}
+
+.title-bar > li:hover {
+		cursor: pointer;
+}
+
+#next-player {
+	text-align: center;
+}
+
+.box {
+	font-size: 80px;
+	text-align: center;
+	display: inline-block;
+	background-color: #d2d2d2;
+	height: 100px;
+	width: 100px;
+	margin-bottom: 3px;
+}
+
+.box:hover {
+	cursor: pointer;
+}
+
+#new-game {
+	text-align: center;
+	color: #242a3a;
+	background-color: #e2854c;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+#new-game:hover {
+	background-color: #ffba77;
+	cursor: pointer;
+}
+
+.blank-box {
+	background-color: #d2d2d2;
+}
+
+.selectedX {
+	background-color: #e2854c;
+	color: #4d5886;
+}
+
+.selectedO {
+	background-color: #4d5886;
+	color: #ffba77;
+}
+
+/*for contact.html and registration.html*/
+input {
+	margin-left: 10px;
+}
+
+textarea {
+	margin-left: 10px;
+}
+
+.submit {
+	text-align: center;
+	color: #242a3a;
+	background-color: #e2854c;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-style: none;
+}
+
+.submit:hover {
+	background-color: #ffba77;
+	cursor: pointer;
+}
