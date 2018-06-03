@@ -3,15 +3,7 @@ function main(){
 	var X = "X";
 	var O = "O";
 	
-	$('.box').addClass('blank-box');
-	
-	function newGame(){
-		var space = "&nbsp";
-		$('.box').html(space).removeClass('selectedX');
-		$('.box').html(space).removeClass('selectedO');
-		playerOneTurn = true;
-		$('.box').addClass('blank-box');
-	}
+	newGame();
 	
 	function displayTurn(){
 		if(playerOneTurn)
@@ -48,67 +40,64 @@ function main(){
 		var box7o = $('#box7').hasClass('selectedO');
 		var box8o = $('#box8').hasClass('selectedO');
 		var box9o = $('#box9').hasClass('selectedO');
+
+		var winnerDeclared = false;
 		
-		if(box1x && box2x && box3x)
-			alert("Player 1 (X) is the winner!");
-		if(box4x && box5x && box6x)
-			alert("Player 1 (X) is the winner!");
-		if(box7x && box8x && box9x)
-			alert("Player 1 (X) is the winner!");
-		if(box1x && box4x && box7x)
-			alert("Player 1 (X) is the winner!");
-		if(box2x && box5x && box8x)
-			alert("Player 1 (X) is the winner!");
-		if(box3x && box6x && box9x)
-			alert("Player 1 (X) is the winner!");
-		if(box1x && box5x && box9x)
-			alert("Player 1 (X) is the winner!");
-		if(box3x && box5x && box7x)
-			alert("Player 1 (X) is the winner!");
-		
-		if(box1o && box2o && box3o)
-			alert("Player 2 (O) is the winner!");
-		if(box4o && box5o && box6o)
-			alert("Player 2 (O) is the winner!");
-		if(box7o && box8o && box9o)
-			alert("Player 2 (O) is the winner!");
-		if(box1o && box4o && box7o)
-			alert("Player 2 (O) is the winner!");
-		if(box2o && box5o && box8o)
-			alert("Player 2 (O) is the winner!");
-		if(box3o && box6o && box9o)
-			alert("Player 2 (O) is the winner!");
-		if(box1o && box5o && box9o)
-			alert("Player 2 (O) is the winner!");
-		if(box3o && box5o && box7o)
-			alert("Player 2 (O) is the winner!");
+		if(box1x && box2x && box3x
+			|| box4x && box5x && box6x
+			|| box7x && box8x && box9x
+			|| box1x && box4x && box7x
+			|| box2x && box5x && box8x
+			|| box3x && box6x && box9x
+			|| box1x && box5x && box9x
+			|| box3x && box5x && box7x) {
+				alert("Player 1 (X) is the winner!");
+				winnerDeclared = true;
+			}
+			
+		if(box1o && box2o && box3o
+			|| box4o && box5o && box6o
+			|| box7o && box8o && box9o
+			|| box1o && box4o && box7o
+			|| box2o && box5o && box8o
+			|| box3o && box6o && box9o
+			|| box1o && box5o && box9o
+			|| box3o && box5o && box7o) {
+				alert("Player 2 (O) is the winner!");
+				winnerDeclared = true;
+			}
+
+		if(winnerDeclared) {
+			$('.box').unbind('click');
+		}
 	}
 	
-	
-	$('.box').click(function(){
-		if($(this).hasClass('blank-box'))
-		{	
-			if(playerOneTurn)
-			{	
-				$(this).html(X).removeClass('blank-box').addClass('selectedX');
-				playerOneTurn = false;
-				checkWin();
-				spacesTaken();
-				displayTurn();
-			}
-			else
-			{
-				$(this).html(O).removeClass('blank-box').addClass('selectedO');
-				playerOneTurn = true;
-				checkWin();
-				spacesTaken();
-				displayTurn();
-			}
-		}
-	});
-	
 	$('#new-game').click(function(){
-		newGame()
+		newGame();
 	});
+
+	function newGame(){
+		var space = '&nbsp';
+		$('.box').html(space).removeClass('selectedX');
+		$('.box').html(space).removeClass('selectedO');
+		playerOneTurn = true;
+		$('.box').addClass('blank-box').click(function(){
+			if($(this).hasClass('blank-box'))
+			{	
+				if(playerOneTurn)
+				{	
+					$(this).html(X).removeClass('blank-box').addClass('selectedX');
+					playerOneTurn = false;				
+				}
+				else
+				{
+					$(this).html(O).removeClass('blank-box').addClass('selectedO');
+					playerOneTurn = true;				
+				}
+			}
+	
+			checkWin();		
+		});
+	}
 }
 $(document).ready(main);
