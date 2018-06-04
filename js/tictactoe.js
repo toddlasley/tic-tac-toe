@@ -69,6 +69,8 @@ function main(){
 
 		if(winnerDeclared) {
 			$('.box').unbind('click');
+		} else {
+			displayTurn();
 		}
 	}
 	
@@ -96,8 +98,10 @@ function main(){
 				}
 			}
 	
-			checkWin();		
+			checkWin();			
 		});
+
+		displayTurn();
 	}
 }
 $(document).ready(main);
